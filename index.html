@@ -1213,6 +1213,269 @@
             </nav>
         </div>
     </header>
+<!-- Mode Toggle Button -->
+<div class="mode-toggle">
+    <input type="checkbox" id="modeToggle" class="toggle-checkbox">
+    <label for="modeToggle" class="toggle-label">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+        <span class="toggle-ball"></span>
+    </label>
+</div>
+<style> /* Dark/Light Mode Variables */
+:root {
+    /* Light mode (default) */
+    --primary-white: #ffffff;
+    --secondary-white: #f5f5f5;
+    --light-text: #333333;
+    --dark-text: #000000;
+    --primary-blue: #003366;
+    --secondary-blue: #004c99;
+    --accent-gold: #cc9900;
+    --accent-green: #2e7d32;
+    --card-bg: #ffffff;
+    --footer-bg: #f5f5f5;
+    --hero-overlay: linear-gradient(180deg, rgba(0,51,102,0.35), rgba(0,0,0,0.55));
+}
+
+[data-theme="dark"] {
+    /* Dark mode */
+    --primary-white: #121212;
+    --secondary-white: #1e1e1e;
+    --light-text: #e0e0e0;
+    --dark-text: #ffffff;
+    --primary-blue: #4dabf7;
+    --secondary-blue: #339af0;
+    --accent-gold: #ffd43b;
+    --accent-green: #51cf66;
+    --card-bg: #1e1e1e;
+    --footer-bg: #1a1a1a;
+    --hero-overlay: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+}
+
+/* Mode Toggle Styling */
+.mode-toggle {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-label {
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 30px;
+    background: linear-gradient(135deg, var(--secondary-blue), var(--accent-green));
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.toggle-label i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.toggle-label .fa-sun {
+    left: 8px;
+    opacity: 1;
+}
+
+.toggle-label .fa-moon {
+    right: 8px;
+    opacity: 0.5;
+}
+
+[data-theme="dark"] .toggle-label .fa-sun {
+    opacity: 0.5;
+}
+
+[data-theme="dark"] .toggle-label .fa-moon {
+    opacity: 1;
+}
+
+.toggle-ball {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-ball {
+    transform: translateX(30px);
+}
+
+/* Responsive toggle */
+@media (max-width: 768px) {
+    .mode-toggle {
+        margin-left: 15px;
+    }
+    
+    .toggle-label {
+        width: 50px;
+        height: 25px;
+    }
+    
+    .toggle-ball {
+        width: 19px;
+        height: 19px;
+    }
+    
+    .toggle-checkbox:checked + .toggle-label .toggle-ball {
+        transform: translateX(25px);
+    }
+}
+/* Body - updated */
+body {
+    background-color: var(--primary-white);
+    color: var(--light-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header - updated */
+header {
+    background-color: rgba(var(--primary-white), 0.95);
+    /* ... rest remains the same ... */
+}
+
+/* Hero overlay - updated */
+section.hero.modern .overlay {
+    background: var(--hero-overlay);
+}
+
+/* Hero card - updated */
+.hero-card {
+    background: linear-gradient(180deg, 
+        rgba(255,255,255,var(--card-opacity, 0.04)), 
+        rgba(255,255,255,var(--card-opacity, 0.02)));
+    border: 1px solid rgba(255,255,255,var(--border-opacity, 0.06));
+    /* ... rest remains ... */
+}
+
+[data-theme="dark"] .hero-card {
+    --card-opacity: 0.08;
+    --border-opacity: 0.1;
+}
+
+/* Service cards - updated */
+.service-card {
+    background-color: var(--secondary-white);
+    border-left: 4px solid var(--primary-blue);
+    transition: all 0.3s ease;
+}
+
+/* Commitment items - updated */
+.commitment-item {
+    background-color: var(--primary-white);
+    border-top: 3px solid var(--accent-green);
+}
+
+/* Form controls - updated */
+.form-control {
+    background-color: var(--secondary-white);
+    border: 1px solid rgba(var(--light-text), 0.2);
+    color: var(--light-text);
+}
+
+/* Footer - updated */
+footer {
+    background-color: var(--footer-bg);
+}
+
+/* Division cards - updated */
+.division-card {
+    background: rgba(var(--light-text), 0.02);
+    border: 1px solid rgba(var(--light-text), 0.1);
+}
+
+/* Showcase items overlay - updated for dark mode */
+[data-theme="dark"] .item-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+/* Hero badges - updated for dark mode */
+[data-theme="dark"] .hero-badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Secondary CTA button - updated */
+.cta-button.secondary {
+    background: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+}
+
+/* Trust items - updated for dark mode */
+[data-theme="dark"] .trust-item {
+    color: rgba(255, 255, 255, 0.9);
+}
+</style>
+<script>// Dark/Light Mode Toggle
+function initThemeToggle() {
+    const modeToggle = document.getElementById('modeToggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Check for saved theme or use preferred scheme
+    const currentTheme = localStorage.getItem('theme');
+    
+    if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        modeToggle.checked = true;
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        modeToggle.checked = false;
+    }
+    
+    // Toggle theme on checkbox change
+    modeToggle.addEventListener('change', function() {
+        if (this.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
+        
+        // Add transition class for smooth change
+        document.body.classList.add('theme-transition');
+        setTimeout(() => {
+            document.body.classList.remove('theme-transition');
+        }, 300);
+    });
+}
+
+// Add smooth transition class
+document.head.insertAdjacentHTML('beforeend', `
+    <style>
+        .theme-transition * {
+            transition: background-color 0.3s ease, 
+                        color 0.3s ease, 
+                        border-color 0.3s ease,
+                        box-shadow 0.3s ease !important;
+        }
+    </style>
+`);
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initThemeToggle); </script>
+
 
     <!-- Hero Section -->
     <section class="hero modern" id="home" aria-label="Aurelum Group hero">
