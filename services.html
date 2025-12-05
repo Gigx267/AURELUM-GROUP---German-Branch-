@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Divisions - AURELUM GROUP | Energy • Resources • Sustainability</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-white: #ffffff;
+            --secondary-white: #f5f5f5;
+            --light-text: #333333;
+            --dark-text: #000000;
+            --primary-blue: #003366;
+            --secondary-blue: #004c99;
+            --accent-gold: #cc9900;
+            --accent-green: #2e7d32;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary-white);
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Enhanced Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 25px rgba(0, 51, 102, 0.1);
+            padding: 5px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            transition: padding 0.3s ease;
+        }
+        
+        header.scrolled .header-container {
+            padding: 8px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-left: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-icon {
+            color: var(--primary-blue);
+            font-size: 2rem;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
+            transition: width 0.5s ease;
+        }
+        
+        .logo:hover::after {
+            width: 100%;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 8px 0;
+            position: relative;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+        
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-blue);
+        }
+        
+        nav ul li a:hover::before {
+            width: 100%;
+        }
+        
+        nav ul li a.active {
+            color: var(--primary-blue);
+        }
+        
+        nav ul li a.active::before {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 51, 102, 0.2);
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 51, 102, 0.3);
+            color: white;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--light-text);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .mobile-menu:hover {
+            color: var(--primary-blue);
+        }
+        
+        /* Page Hero Section */
+        .page-hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('./jp (3).jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .page-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--dark-text);
+        }
+        
+        .page-hero .tagline {
+            font-size: 1.4rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .page-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--light-text);
+        }
+        
+        .hero-highlight {
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent-green);
+        }
+        
+        /* Divisions Intro Section */
+        .divisions-intro {
+            background-color: var(--secondary-white);
+        }
+        
+        .divisions-intro-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .divisions-intro-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .divisions-intro-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+        
+        .divisions-intro-text p {
+            margin-bottom: 15px;
+            color: #555555;
+        }
+        
+        .divisions-intro-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background: url('./gtt (7).jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Divisions Grid Section */
+        .divisions-grid {
+            background-color: var(--primary-white);
+        }
+        
+        .divisions-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .division-card {
+            background-color: var(--secondary-white);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .division-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .division-card.solar {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .division-card.solar:hover {
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .division-card.minerals {
+            border-left: 4px solid var(--accent-gold);
+        }
+        
+        .division-card.minerals:hover {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .division-icon {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary-blue);
+            background-color: rgba(0, 51, 102, 0.05);
+        }
+        
+        .division-card.solar .division-icon {
+            color: var(--accent-green);
+            background-color: rgba(46, 125, 50, 0.05);
+        }
+        
+        .division-card.minerals .division-icon {
+            color: var(--accent-gold);
+            background-color: rgba(204, 153, 0, 0.05);
+        }
+        
+        .division-content {
+            padding: 25px;
+        }
+        
+        .division-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+        
+        .division-card.solar .division-content h3 {
+            color: var(--accent-green);
+        }
+        
+        .division-card.minerals .division-content h3 {
+            color: var(--accent-gold);
+        }
+        
+        .division-content p {
+            color: #555555;
+            margin-bottom: 20px;
+        }
+        
+        .division-features {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .division-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            color: #555555;
+        }
+        
+        .division-features li i {
+            color: var(--accent-green);
+            margin-right: 10px;
+            font-size: 0.9rem;
+            min-width: 18px;
+        }
+        
+        .division-card.solar .division-features li i {
+            color: var(--primary-blue);
+        }
+        
+        .division-card.minerals .division-features li i {
+            color: var(--accent-gold);
+        }
+        
+        /* Capabilities Section */
+        .capabilities {
+            background-color: var(--secondary-white);
+        }
+        
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .capability-card {
+            background-color: var(--primary-white);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--primary-blue);
+        }
+        
+        .capability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .capability-icon {
+            font-size: 2.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .capability-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+        
+        .capability-card p {
+            color: #666666;
+            font-size: 0.95rem;
+        }
+        
+        /* Process Section */
+        .process {
+            background-color: var(--primary-white);
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 50px;
+            position: relative;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-blue);
+            z-index: 1;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 0 15px;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            transition: all 0.3s;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .process-step:hover .step-number {
+            background-color: var(--accent-green);
+            transform: scale(1.1);
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+        
+        .process-step p {
+            color: #555555;
+        }
+        
+        /* ESG Integration Section */
+        .esg-integration {
+            background-color: var(--secondary-white);
+        }
+        
+        .esg-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .esg-content p {
+            margin-bottom: 30px;
+            color: #555555;
+            font-size: 1.1rem;
+        }
+        
+        .esg-pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .esg-pillar {
+            background-color: var(--primary-white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .esg-pillar:hover {
+            transform: translateY(-5px);
+        }
+        
+        .esg-pillar i {
+            color: var(--accent-green);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .esg-pillar h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+        
+        .esg-pillar p {
+            color: #666666;
+            font-size: 0.95rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-blue);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #555555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-white);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666666;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.98);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(10px);
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .divisions-intro-text, .divisions-intro-image {
+                flex: 100%;
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+            
+            .process-step {
+                flex: 100%;
+                margin-bottom: 30px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .division-icon {
+                height: 150px;
+                font-size: 3rem;
+            }
+            
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Music Player -->
+    <audio id="bgMusic" loop>
+        <source src="mm.mp3" type="audio/mpeg">
+        <source src="mm.mp3" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Enhanced Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i><img style="height: 1.3cm; border-radius: 50%;" src="logo (1).jpeg" alt="AURELUM GROUP Logo"></i>
+                <h1>AURELUM GROUP</h1>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services </a></li>
+                    <li><a href="commit.html">Commitment</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="nav-cta">Partner With Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+   
+
+    <!-- Divisions Intro Section -->
+    <section class="divisions-intro">
+        <div class="container">
+            <div class="section-title">
+                <h2> <BR><BR>Integrated Solutions for Global Markets</h2>
+            </div>
+            <div class="divisions-intro-content">
+                <div class="divisions-intro-text">
+                    <h3>A Diversified Approach to Energy & Resources</h3>
+                    <p>AURELUM GROUP operates through four specialized divisions, each delivering excellence in their respective sectors while maintaining our core values of integrity, sustainability, and partnership.</p>
+                    <p>Our integrated approach ensures seamless operations from sourcing to delivery, providing our clients with reliable, efficient, and compliant solutions tailored to their specific needs.</p>
+                    <p>With strategic bases in Ghana and Germany, we bridge African resource potential with global market demands, creating sustainable value across the entire supply chain.</p>
+                    <p>Each division operates with strict ESG-aligned governance, ensuring responsible practices and traceable operations across all value chains.</p>
+                </div>
+                <div class="divisions-intro-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divisions Grid Section -->
+    <section class="divisions-grid">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Four Divisions</h2>
+            </div>
+            <div class="divisions-container">
+                <!-- Petroleum Division -->
+                <div class="division-card">
+                    <div class="division-icon">
+                        <i class="fas fa-oil-well"></i>
+                    </div>
+                    <div class="division-content">
+                        <h3>Petroleum Products & Downstream Logistics</h3>
+                        <p>Comprehensive supply of Diesel (EN590), Jet Fuel (A1), Gasoline, Fuel Oil, Naphtha, LPG, and Lubricants delivered through efficient CIF, FOB, and in-country logistics models.</p>
+                        <ul class="division-features">
+                            <li><i class="fas fa-check"></i> Certified quality assurance & international standards</li>
+                            <li><i class="fas fa-check"></i> Strategic storage partnerships & inventory management</li>
+                            <li><i class="fas fa-check"></i> Secure logistics and global market access</li>
+                            <li><i class="fas fa-check"></i> Competitive pricing models with flexible terms</li>
+                            <li><i class="fas fa-check"></i> Compliance with environmental regulations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Solar Energy Division -->
+                <div class="division-card solar">
+                    <div class="division-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="division-content">
+                        <h3>Solar Energy & Green Power Systems</h3>
+                        <p>Accelerating Africa's transition toward renewable, stable, and affordable energy through innovative solar solutions and hybrid power systems.</p>
+                        <ul class="division-features">
+                            <li><i class="fas fa-check"></i> Solar farm development & project management</li>
+                            <li><i class="fas fa-check"></i> Commercial & industrial solar installations</li>
+                            <li><i class="fas fa-check"></i> Second-life and repurposed solar modules</li>
+                            <li><i class="fas fa-check"></i> Off-grid and mini-grid electrification solutions</li>
+                            <li><i class="fas fa-check"></i> Hybrid power systems for industry & communities</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Minerals Division -->
+                <div class="division-card minerals">
+                    <div class="division-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="division-content">
+                        <h3>Gold & Precious Mineral Trading</h3>
+                        <p>Secure, compliant sourcing from West Africa with full KYC, chain-of-custody transparency, and international refinery partnerships.</p>
+                        <ul class="division-features">
+                            <li><i class="fas fa-check"></i> Vetted mining partnerships with traceable sourcing</li>
+                            <li><i class="fas fa-check"></i> Full compliance with international regulatory standards</li>
+                            <li><i class="fas fa-check"></i> Responsible sourcing & ESG-aligned practices</li>
+                            <li><i class="fas fa-check"></i> Quality certification & refinery partnerships</li>
+                            <li><i class="fas fa-check"></i> Due diligence & anti-money laundering compliance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Logistics Division -->
+                <div class="division-card">
+                    <div class="division-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <div class="division-content">
+                        <h3>Integrated Supply Chain Solutions</h3>
+                        <p>End‑to‑end logistics support including port operations, documentation, customs clearance, warehousing and secure shipment arrangements to optimize cost and efficiency.</p>
+                        <ul class="division-features">
+                            <li><i class="fas fa-check"></i> Comprehensive documentation & compliance management</li>
+                            <li><i class="fas fa-check"></i> Customs clearance expertise across multiple jurisdictions</li>
+                            <li><i class="fas fa-check"></i> Optimized shipping routes & multimodal transport</li>
+                            <li><i class="fas fa-check"></i> Warehousing, inventory & distribution management</li>
+                            <li><i class="fas fa-check"></i> Real-time tracking & supply chain visibility</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section class="capabilities">
+        <div class="container">
+            <div class="section-title">
+                <h2>Core Capabilities</h2>
+            </div>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3>Market Access</h3>
+                    <p>Strategic access to African resource markets and global distribution networks through our dual-base operational model.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partnership Development</h3>
+                    <p>Building lasting relationships with producers, refiners, governments, and industrial buyers across continents.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Compliance Management</h3>
+                    <p>Ensuring full adherence to international regulations, environmental standards, and ESG requirements.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainability Integration</h3>
+                    <p>Embedding ESG principles across all operations, from renewable energy to responsible sourcing practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Integrated Process</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Strategic Assessment</h3>
+                    <p>Understanding client requirements, market conditions, and sustainability goals to develop tailored solutions.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Responsible Sourcing</h3>
+                    <p>Leveraging our verified network to source quality materials from ESG-compliant suppliers and partners.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Compliance Coordination</h3>
+                    <p>Managing logistics, documentation, customs clearance, and regulatory compliance across jurisdictions.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Sustainable Delivery</h3>
+                    <p>Ensuring timely, secure, and environmentally-conscious delivery that meets client expectations and standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESG Integration Section -->
+    <section class="esg-integration">
+        <div class="container">
+            <div class="section-title">
+                <h2>ESG Integration Across All Divisions</h2>
+            </div>
+            <div class="esg-content">
+                <p>At AURELUM GROUP, Environmental, Social, and Governance principles are embedded into every aspect of our operations, ensuring sustainable and responsible business practices across all divisions.</p>
+                <div class="esg-pillars">
+                    <div class="esg-pillar">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Environmental Stewardship</h3>
+                        <p>Minimizing environmental impact through renewable energy solutions, responsible sourcing, and carbon footprint reduction initiatives.</p>
+                    </div>
+                    <div class="esg-pillar">
+                        <i class="fas fa-users"></i>
+                        <h3>Social Responsibility</h3>
+                        <p>Supporting local communities, ensuring fair labor practices, and promoting economic development across our operational regions.</p>
+                    </div>
+                    <div class="esg-pillar">
+                        <i class="fas fa-balance-scale"></i>
+                        <h3>Governance Excellence</h3>
+                        <p>Maintaining transparent operations, strict compliance, ethical conduct, and anti-corruption measures across all business activities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Partner for Sustainable Growth?</h2>
+            <p>Connect with AURELUM GROUP for integrated energy, resource, and logistics solutions that drive efficiency, compliance, and sustainability.</p>
+            <a href="contact.html" class="cta-button">Contact Our Divisions Team</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AURELUM GROUP</h3>
+                    <p>Energy • Resources • Sustainability</p>
+                    <p>Innovation in Energy, Integrity in Trade, Impact in Africa</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="divisions.html">Our Divisions</a></li>
+                        <li><a href="commit.html">Our Commitment</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Divisions</h3>
+                    <ul>
+                        <li><a href="divisions.html">Petroleum Products</a></li>
+                        <li><a href="divisions.html">Solar Energy</a></li>
+                        <li><a href="divisions.html">Precious Minerals</a></li>
+                        <li><a href="divisions.html">Supply Chain Solutions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 AURELUM GROUP. All Rights Reserved. | ESG-Compliant • Sustainable • Transparent</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Wait for the page to fully load
+        window.addEventListener('load', function() {
+            const bgMusic = document.getElementById('bgMusic');
+            
+            // Try to play the music automatically
+            const playPromise = bgMusic.play();
+            
+            // Handle autoplay restrictions
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented:", error);
+                    // Create a fallback play button
+                    createMusicControls();
+                });
+            }
+        });
+        
+        // Create visible controls if autoplay is blocked
+        function createMusicControls() {
+            const musicControls = document.createElement('div');
+            musicControls.id = 'music-controls';
+            musicControls.innerHTML = `
+                <button id="playMusicBtn">▶ Play Background Music</button>
+                <button id="muteMusicBtn">🔇 Mute</button>
+            `;
+            musicControls.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 10000;
+                background: rgba(255, 255, 255, 0.95);
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid var(--primary-blue);
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            `;
+            
+            document.body.appendChild(musicControls);
+            
+            document.getElementById('playMusicBtn').addEventListener('click', function() {
+                document.getElementById('bgMusic').play();
+                musicControls.style.display = 'none';
+            });
+            
+            document.getElementById('muteMusicBtn').addEventListener('click', function() {
+                musicControls.style.display = 'none';
+            });
+        }
+
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav').classList.remove('active');
+                    
+                    // Update active nav link
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Set active nav link based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
