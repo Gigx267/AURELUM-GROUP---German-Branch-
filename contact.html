@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AURELUM GROUP | Energy • Resources • Sustainability</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-white: #ffffff;
+            --secondary-white: #f5f5f5;
+            --light-text: #333333;
+            --dark-text: #000000;
+            --primary-blue: #003366;
+            --secondary-blue: #004c99;
+            --accent-gold: #cc9900;
+            --accent-green: #2e7d32;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary-white);
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Enhanced Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 25px rgba(0, 51, 102, 0.1);
+            padding: 5px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            transition: padding 0.3s ease;
+        }
+        
+        header.scrolled .header-container {
+            padding: 8px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-left: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
+            transition: width 0.5s ease;
+        }
+        
+        .logo:hover::after {
+            width: 100%;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 8px 0;
+            position: relative;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+        
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-blue);
+        }
+        
+        nav ul li a:hover::before {
+            width: 100%;
+        }
+        
+        nav ul li a.active {
+            color: var(--primary-blue);
+        }
+        
+        nav ul li a.active::before {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 51, 102, 0.2);
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 51, 102, 0.3);
+            color: white;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--light-text);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .mobile-menu:hover {
+            color: var(--primary-blue);
+        }
+        
+        /* Page Hero Section */
+        .page-hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('./jp\ \(3\).jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .page-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--dark-text);
+        }
+        
+        .page-hero .tagline {
+            font-size: 1.4rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .page-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--light-text);
+        }
+        
+        /* Contact Main Section */
+        .contact-main {
+            padding: 80px 0;
+            background-color: var(--secondary-white);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        /* Contact Info Section */
+        .contact-info {
+            padding: 30px;
+        }
+        
+        .contact-info h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .contact-info h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-green);
+        }
+        
+        .contact-info p {
+            margin-bottom: 30px;
+            color: #555555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .contact-details {
+            margin: 40px 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--primary-white);
+            border-radius: 8px;
+            transition: transform 0.3s;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .contact-item i {
+            color: var(--accent-green);
+            font-size: 1.5rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(46, 125, 50, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--primary-blue);
+        }
+        
+        .contact-text p {
+            margin-bottom: 0;
+            color: #666666;
+        }
+        
+        .business-hours {
+            background-color: var(--primary-white);
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .business-hours h4 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .hours-list {
+            list-style: none;
+        }
+        
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Contact Form Section */
+        .contact-form-section {
+            padding: 30px;
+            background-color: var(--primary-white);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .contact-form-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .contact-form-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-green);
+        }
+        
+        .contact-form-section > p {
+            margin-bottom: 30px;
+            color: #555555;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--light-text);
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--secondary-white);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            color: var(--light-text);
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+        }
+        
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .select-wrapper {
+            position: relative;
+        }
+        
+        .select-wrapper::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            pointer-events: none;
+        }
+        
+        select.form-control {
+            appearance: none;
+            padding-right: 40px;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 51, 102, 0.2);
+        }
+        
+        /* Global Locations Section */
+        .global-locations {
+            padding: 80px 0;
+            background-color: var(--primary-white);
+        }
+        
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .location-card {
+            background-color: var(--secondary-white);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .location-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .location-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .location-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .location-header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+        
+        .location-body {
+            padding: 25px;
+        }
+        
+        .location-details {
+            margin-bottom: 20px;
+        }
+        
+        .location-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .location-detail i {
+            color: var(--accent-green);
+            margin-right: 15px;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+        
+        .location-services {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .location-services h4 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .service-tag {
+            background-color: rgba(0, 51, 102, 0.1);
+            color: var(--primary-blue);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        /* Team Section */
+        .team-section {
+            padding: 80px 0;
+            background-color: var(--secondary-white);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-card {
+            background-color: var(--primary-white);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.1), rgba(46, 125, 50, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: var(--primary-blue);
+        }
+        
+        .team-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+        
+        .team-card .position {
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .team-card p {
+            color: #666666;
+            font-size: 0.95rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-blue);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary-white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #555555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-white);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666666;
+            font-size: 0.9rem;
+        }
+        
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent-green);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.98);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(10px);
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-info h2,
+            .contact-form-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-item {
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .location-card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Music Player -->
+    <audio id="bgMusic" loop>
+        <source src="mm.mp3" type="audio/mpeg">
+        <source src="mm.mp3" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Enhanced Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i><img style="height: 1.3cm; border-radius: 50%;" src="logo (1).jpeg" alt="AURELUM GROUP Logo"></i>
+                <h1>AURELUM GROUP</h1>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services </a></li>
+                    <li><a href="commit.html">Commitment</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="contact.html" class="nav-cta">Partner With Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h3>Contact Us</h3>
+                <div class="tagline">Let's Build a Sustainable Future Together</div>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Main Section -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-container">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>We welcome partnership inquiries, supply requests, and discussions about sustainable energy and resource solutions. Our team is ready to support your business needs across all our divisions.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-text">
+                                <h4>GHANA Headquarters</h4>
+                                <p>Accra with operational hub in Tema, Energy Corridor</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+233 24 712 4203</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-text">
+                                <h4>EUROPE Hub</h4>
+                                <p>Düsseldorf, North Rhine–Westphalia, Germany</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+49 211 16366233</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>contact@aurelumgroup.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="contact-text">
+                                <h4>Response Time</h4>
+                                <p>Within 24 hours for all inquiries</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="business-hours">
+                        <h4>Business Hours</h4>
+                        <ul class="hours-list">
+                            <li>
+                                <span>Monday - Friday</span>
+                                <span>8:00 AM - 6:00 PM</span>
+                            </li>
+                            <li>
+                                <span>Saturday</span>
+                                <span>9:00 AM - 2:00 PM</span>
+                            </li>
+                            <li>
+                                <span>Sunday</span>
+                                <span>Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and our team will get back to you promptly.</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company/Organization</label>
+                            <input type="text" id="company" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="division">Division of Interest *</label>
+                            <div class="select-wrapper">
+                                <select id="division" class="form-control" required>
+                                    <option value="">Select a division</option>
+                                    <option value="petroleum">Petroleum Products & Logistics</option>
+                                    <option value="solar">Solar Energy & Green Power Systems</option>
+                                    <option value="minerals">Gold & Precious Mineral Trading</option>
+                                    <option value="logistics">Integrated Supply Chain Solutions</option>
+                                    <option value="general">General Inquiry / Partnership</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Locations Section -->
+    <section class="global-locations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Global Locations</h2>
+            </div>
+            <div class="locations-grid">
+                <!-- Ghana Office -->
+                <div class="location-card">
+                    <div class="location-header">
+                        <h3>GHANA Headquarters</h3>
+                        <p>African Operations Hub</p>
+                    </div>
+                    <div class="location-body">
+                        <div class="location-details">
+                            <div class="location-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Address:</strong>
+                                    <p>Tema–Accra Energy Corridor, Accra, Ghana</p>
+                                </div>
+                            </div>
+                            <div class="location-detail">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone:</strong>
+                                    <p>+233 24 712 4203</p>
+                                </div>
+                            </div>
+                            <div class="location-detail">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email:</strong>
+                                    <p>ghana@aurelumgroup.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="location-services">
+                            <h4>Services Focus</h4>
+                            <div class="services-list">
+                                <span class="service-tag">Petroleum Trading</span>
+                                <span class="service-tag">Mineral Sourcing</span>
+                                <span class="service-tag">West Africa Logistics</span>
+                                <span class="service-tag">Solar Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Germany Office -->
+                <div class="location-card">
+                    <div class="location-header">
+                        <h3>GERMANY Office</h3>
+                        <p>European Operations Hub</p>
+                    </div>
+                    <div class="location-body">
+                        <div class="location-details">
+                            <div class="location-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Address:</strong>
+                                    <p>Düsseldorf, North Rhine–Westphalia, Germany</p>
+                                </div>
+                            </div>
+                            <div class="location-detail">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Phone:</strong>
+                                    <p>+49 211 16366233</p>
+                                </div>
+                            </div>
+                            <div class="location-detail">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email:</strong>
+                                    <p>germany@aurelumgroup.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="location-services">
+                            <h4>Services Focus</h4>
+                            <div class="services-list">
+                                <span class="service-tag">International Trade</span>
+                                <span class="service-tag">European Markets</span>
+                                <span class="service-tag">Compliance & Governance</span>
+                                <span class="service-tag">Solar Technology</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Our Team</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partnership Inquiries</h3>
+                    <div class="position">Strategic Alliances</div>
+                    <p>For partnership opportunities, joint ventures, and strategic collaborations across our divisions.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Sales & Procurement</h3>
+                    <div class="position">Supply & Demand</div>
+                    <p>For product inquiries, supply requests, pricing, and procurement across petroleum, minerals, and solar.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3>Logistics & Operations</h3>
+                    <div class="position">Supply Chain Management</div>
+                    <p>For shipping, customs clearance, warehousing, and logistics coordination inquiries.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainability & ESG</h3>
+                    <div class="position">Responsible Operations</div>
+                    <p>For inquiries about our sustainability initiatives, ESG compliance, and green energy projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Partner for Sustainable Growth?</h2>
+            <p>Connect with AURELUM GROUP today to explore how our integrated energy, resource, and logistics solutions can drive your business forward with integrity and impact.</p>
+            <a href="#contactForm" class="cta-button">Send Us a Message</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AURELUM GROUP</h3>
+                    <p>Energy • Resources • Sustainability</p>
+                    <p>Innovation in Energy, Integrity in Trade, Impact in Africa</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="divisions.html">Our Divisions</a></li>
+                        <li><a href="commit.html">Our Commitment</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our Divisions</h3>
+                    <ul>
+                        <li><a href="divisions.html">Petroleum Products</a></li>
+                        <li><a href="divisions.html">Solar Energy</a></li>
+                        <li><a href="divisions.html">Precious Minerals</a></li>
+                        <li><a href="divisions.html">Supply Chain Solutions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 AURELUM GROUP. All Rights Reserved. | ESG-Compliant • Sustainable • Transparent</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Wait for the page to fully load
+        window.addEventListener('load', function() {
+            const bgMusic = document.getElementById('bgMusic');
+            
+            // Try to play the music automatically
+            const playPromise = bgMusic.play();
+            
+            // Handle autoplay restrictions
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay prevented:", error);
+                    // Create a fallback play button
+                    createMusicControls();
+                });
+            }
+        });
+        
+        // Create visible controls if autoplay is blocked
+        function createMusicControls() {
+            const musicControls = document.createElement('div');
+            musicControls.id = 'music-controls';
+            musicControls.innerHTML = `
+                <button id="playMusicBtn">▶ Play Background Music</button>
+                <button id="muteMusicBtn">🔇 Mute</button>
+            `;
+            musicControls.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 10000;
+                background: rgba(255, 255, 255, 0.95);
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid var(--primary-blue);
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            `;
+            
+            document.body.appendChild(musicControls);
+            
+            document.getElementById('playMusicBtn').addEventListener('click', function() {
+                document.getElementById('bgMusic').play();
+                musicControls.style.display = 'none';
+            });
+            
+            document.getElementById('muteMusicBtn').addEventListener('click', function() {
+                musicControls.style.display = 'none';
+            });
+        }
+
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav').classList.remove('active');
+                    
+                    // Update active nav link
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const division = document.getElementById('division').value;
+            
+            // Show success message
+            alert(`Thank you ${firstName}! Your message has been sent successfully. Our team will contact you regarding ${this.querySelector('option[value="' + division + '"]').textContent} within 24 hours.`);
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Set active nav link based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
